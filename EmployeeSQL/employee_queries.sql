@@ -36,7 +36,7 @@ ON (d_m.emp_no = e.emp_no);
 --employee number, last name, first name, and department name.
 
 CREATE VIEW question_4 AS
-SELECT e.emp_no, e.last_name, e.first_name, d_e.dept_no, d.dept_name
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees e
 JOIN dept_emp d_e
 ON (e.emp_no = d_e.emp_no)
