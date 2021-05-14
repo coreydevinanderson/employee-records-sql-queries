@@ -1,4 +1,4 @@
---Tables:
+--Table source files:
 
 --departments.csv
 --titles.csv
@@ -52,14 +52,15 @@ CREATE TABLE employees (
 --View
 SELECT * FROM employees;
 
---Add FOREIGN KEY
+--Add FOREIGN KEY matching emp_title_id to title_id in titles.
 ALTER TABLE employees
 ADD FOREIGN KEY (emp_title_id) REFERENCES titles(title_id);
 
 
 --=======================
 
--- Create 'dept_emp' table; set emp_no and dept_no as PRIMARY KEYS
+-- Create 'dept_emp' table; set emp_no and dept_no as PRIMARY KEYS.
+-- Make compositive key since some employees were associated with multiple departments.
 
 CREATE TABLE dept_emp (
 	emp_no INT NOT NULL,
@@ -70,7 +71,7 @@ CREATE TABLE dept_emp (
 --View 
 SELECT * FROM dept_emp
 
---Add FOREIGN KEYS
+--Add FOREIGN KEYS to emp_no from employees and dept_no from departments.
 ALTER TABLE dept_emp
 ADD FOREIGN KEY (emp_no) REFERENCES employees(emp_no);
 
@@ -79,7 +80,7 @@ ADD FOREIGN KEY (dept_no) REFERENCES departments(dept_no);
 	
 --=======================
 
--- Create dept_manager table; set dept_no and emp_no as PRIMARY KEYS
+-- Create dept_manager table; set dept_no and emp_no as composite PRIMARY KEY.
 
 CREATE TABLE dept_manager (
 	dept_no VARCHAR NOT NULL,
@@ -90,7 +91,7 @@ CREATE TABLE dept_manager (
 --View
 SELECT * FROM dept_manager
 
---Add FOREIGN KEYS
+--Add FOREIGN KEYS to emp_no from employees and dept_no from departments.
 ALTER TABLE dept_manager
 ADD FOREIGN KEY (emp_no) REFERENCES employees(emp_no);
 
@@ -99,7 +100,7 @@ ADD FOREIGN KEY (dept_no) REFERENCES departments(dept_no);
 
 --=======================
 
---Create salaries table then add serial key
+--Create salaries table then add serial key.
 
 CREATE TABLE salaries (
 	emp_no INT NOT NULL,
@@ -112,6 +113,6 @@ SELECT * FROM salaries;
 ALTER TABLE salaries
 ADD COLUMN salaries_id SERIAL PRIMARY KEY;
 
---Add FOREIGN KEY
+--Add FOREIGN KEY to emp_no from employees.
 ALTER TABLE salaries 
 ADD FOREIGN KEY (emp_no) REFERENCES employees(emp_no);

@@ -24,12 +24,13 @@ WHERE hire_date >= '1986-01-01' AND hire_date <= '1986-12-31';
 --department number, department name, the manager's employee number, last name, first name.
 
 CREATE VIEW question_3 AS
-SELECT d_m.dept_no, d_m.emp_no, d.dept_name, e.last_name, e.first_name
+SELECT d_m.dept_no, d.dept_name, d_m.emp_no, e.last_name, e.first_name
 FROM dept_manager d_m
 JOIN departments d
 ON (d_m.dept_no = d.dept_no)
 JOIN employees e
 ON (d_m.emp_no = e.emp_no);
+
 
 --Question_4
 --List the department of each employee with the following information:
