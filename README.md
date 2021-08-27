@@ -18,7 +18,7 @@ The directory "data" contains the source .csv files (n = 6) that should be impor
 
 The eight questions/queries are in employee_queries.sql 
 
-The bonus questions are contained in a jupyter notebook (.ipynb).
+Extra content is contained in a jupyter notebook (.ipynb).
 
 I used 'pandas' along with create_engine from 'sqlalchemy' to emulate the postgreSQL database. Configuring the database_path for postgreSQL required installing 'psycopg2'.
 
