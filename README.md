@@ -1,4 +1,4 @@
-This repository contains postgreSQL code and supporting files for the Georgia Tech Data Science and Analytics Bootcamp sql-challenge.
+This repository contains postgreSQL code and supporting files for employee records from the "Packard Hewlett" PostgreSQL database.
 
 There are two .sql files:
     
